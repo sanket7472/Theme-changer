@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 27</title>
+    <style>
+        .container{
+            margin: 10px 0;
+            padding: 10px;
+            text-align: center;
+        }
+        .theme-icon{
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px; 
+            background-color: white;           
+        }
+        .active{
+            border: 1px solid black;
+        }
+        .theme-dark{
+            background-color: black;
+            color: white;
+        }
+        .theme-light{
+            background-color: white;
+            color: black;
+        }
+    </style> 
+</head>
+<body id="body">
+    <div class="container">
+        <img src="./img/moon.jpeg" class="theme-icon" id="dark" onclick="darkmode()"/>
+        <img src="./img/day-mode.jpeg" class="theme-icon" id="light" onclick="lightmode()"/>
+        <h1> Light And Dark Mode Theme Changer</h1>
+        <h2>...Light Mode...</h2>
+        <p>Light Mode is the default view mode on most of the interfaces. These interfaces usually have a white background and are very bright.
+            Most of the interfaces are designed for light mode and the designers can get creative with them.Light Mode provides better readability as the text becomes more readable due 
+            to the presence of contrast.Light Mode gives off a light and positive mood to the viewers and is better for people with normal vision in 
+            normal lighting conditions.
+        </p>
+        <h2>...Dark Mode...</h2>
+        <p>
+            Dark Mode is a theme to which users can switch their interfaces. These interfaces usually have dark colors like black or darker shades of grey.
+            It’s also called night mode or dark theme on some interfaces regardless it is the same thing. Showing creativity is harder on dark interfaces as
+            different colors and textures don’t go very well with dark colored themes. Dark Mode has become a trend with brands now. 
+            Dark Mode gives off a mysterious and aesthetic vibe to the viewers which helps brands in marketing their products better.
+        </p>
+        
+    </div>
+
+   
+<script>
+        function darkmode(){
+            const imgDark =document.getElementById("dark");
+            imgDark.classList.add("active");
+
+            const imgLight = document.getElementById("light");
+            imgLight.classList.remove("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-dark";
+        }
+        function lightmode(){
+            const imgDark =document.getElementById("dark");
+            imgDark.classList.remove("active");
+
+            const imgLight = document.getElementById("light");
+            imgLight.classList.add("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-light";
+        }
+    </script>
+</body>
+</html>
